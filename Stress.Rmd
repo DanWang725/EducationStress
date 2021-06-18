@@ -1,0 +1,37 @@
+---
+title: "HomeworkStress"
+author: "Daniel Wang"
+date: "17/06/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(rvest)
+library(janitor)
+```
+
+
+```{r echo = FALSE, include=FALSE}
+raw_data <- read_csv("responses.csv") %>% 
+  clean_names()
+raw_data
+
+clean_data <- raw_data %>% 
+  select(before_homework_stress, now_homework_stress) %>% 
+  pivot_longer(names_to = "time_frame", values_to = "stress", cols = before_homework_stress:now_homework_stress)
+ 
+plot_data <- clean_data %>% 
+  ggplot(aes(x = stress, fill = time_frame))+
+  geom_bar()+
+  facet_wrap(~time_frame)+
+  theme_classic()+
+  labs(title = "Stress Levels Experienced by Students Before and After Covid-19", subtitle = "There were higher stress levels experienced during Covid-19", x = "Stress Levels", y = "Count", fill = "Time Period")
+
+```
+
+```{r, echo = FALSE}
+plot_data
+```
+
