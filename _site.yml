@@ -2,10 +2,10 @@ name: "."
 title: "Final Project"
 description: |
   Final Project
-output_dir: "_site"
+output_dir: "docs"
 navbar:
-  left:
-    - text: "Home"
+  right:
+    - text: "Index"
       href: index.html
     - text: "About"
       href: about.html

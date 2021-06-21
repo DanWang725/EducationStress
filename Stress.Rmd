@@ -6,10 +6,11 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
 library(rvest)
 library(janitor)
+
 ```
 
 
@@ -41,7 +42,7 @@ plot_data2 <- clean_data2 %>%
 plot_data3 <- clean_data2 %>% 
   ggplot(aes(x = homework_hours, y = homework_stress))+
   geom_jitter()+
-  geom_smooth()+
+  geom_smooth(method = "loess", formula = y ~ x)+
   facet_wrap(.~time_frame_f)
 
 ```

@@ -16,13 +16,13 @@ library(janitor)
 
 ```
 
-```{r get-data, echo=FALSE}
+```{r get-data}
 clean_data <- read_rds("clean-data.rds") %>% 
   mutate(time_frame_f = factor(time_frame, c("before", "after"))) %>% 
   mutate(environment = factor(environment, c("Physical","Hybrid","Virtual")))
 ```
 
-```{r handle-data, echo=FALSE}
+```{r handle-data}
 
 ```
 
