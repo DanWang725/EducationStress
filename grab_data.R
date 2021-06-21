@@ -6,17 +6,41 @@ raw_data <- read_csv("responses.csv") %>%
   clean_names()
 raw_data
 
-clean_data <- raw_data %>% 
-  select(before_homework_stress, now_homework_stress) %>% 
-  pivot_longer(names_to = "time_frame", values_to = "stress", cols = before_homework_stress:now_homework_stress)
+col_names <- c("environment","classwork_stress","homework_stress","homework_hours")
+
+# clean_data <- raw_data %>% 
+#   select(before_homework_stress, now_homework_stress,
+#          before_environment, now_environment,
+#          before_classwork_stress,now_classwork_stress) %>% 
+#   group_by(before_environment, now_environment) %>% 
+#   pivot_longer(names_to = "time_frame", values_to = "environment",
+#                cols = c(before_environment,now_environment))
+# 
+# intermed_data <- raw_data %>% 
+#   select(before_homework_hours, before_classwork_stress, before_environment) %>% 
+#   rename(homework_hours = before_homework_hours,
+#          classwork_stress = before_classwork_stress,
+#          environment = before_environment) %>% 
+#   mutate(time_frame = "before")
   
+before <- raw_data %>% 
+  select(contains("before")) %>% 
+  set_names(col_names) %>% 
+  mutate(time_frame = "before")
+  
+after <- raw_data %>% 
+  select(contains("now")) %>% 
+  set_names(col_names) %>% 
+  mutate(time_frame = "after")
+
+clean_data <- bind_rows(before,after)
+  
+write_rds(clean_data, "clean-data.rds")
 
 clean_data %>% 
   ggplot(aes(x = stress, color = time_frame))+
   geom_bar()+
   facet_wrap(~time_frame)
-  #pivot_longer(names_to = "Time-Frame", values_to = "Environment",
-  #             cols = c(`Before-Environment`, `Now-Environment`)) %>% 
-  #mutate(`Time-Frame` = if_else(`Time-Frame` == "Before-Environment", "Before_Covid", "After-Covid"))
+  mutate(`Time-Frame` = if_else(`Time-Frame` == "Before-Environment", "Before_Covid", "After-Covid"))
 
   

@@ -1,0 +1,29 @@
+---
+title: "Final Project"
+description: |
+  Welcome to the website. I hope you enjoy it!
+site: distill::distill_website
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(rvest)
+library(janitor)
+
+# Learn more about creating websites with Distill at:
+# https://rstudio.github.io/distill/website.html
+
+```
+
+```{r get-data, echo=FALSE}
+clean_data <- read_rds("clean-data.rds") %>% 
+  mutate(time_frame_f = factor(time_frame, c("before", "after"))) %>% 
+  mutate(environment = factor(environment, c("Physical","Hybrid","Virtual")))
+```
+
+```{r handle-data, echo=FALSE}
+
+```
+
+

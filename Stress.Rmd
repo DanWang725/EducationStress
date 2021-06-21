@@ -18,6 +18,10 @@ raw_data <- read_csv("responses.csv") %>%
   clean_names()
 raw_data
 
+clean_data2 <- read_csv("clean_data.csv") %>% 
+  mutate(time_frame_f = factor(time_frame, c("before", "after"))) %>% 
+  mutate(environment = factor(environment, c("Physical","Hybrid","Virtual")))
+
 clean_data <- raw_data %>% 
   select(before_homework_stress, now_homework_stress) %>% 
   pivot_longer(names_to = "time_frame", values_to = "stress", cols = before_homework_stress:now_homework_stress)
@@ -29,9 +33,31 @@ plot_data <- clean_data %>%
   theme_classic()+
   labs(title = "Stress Levels Experienced by Students Before and After Covid-19", subtitle = "There were higher stress levels experienced during Covid-19", x = "Stress Levels", y = "Count", fill = "Time Period")
 
+plot_data2 <- clean_data2 %>% 
+  ggplot(aes(classwork_stress))+
+  geom_bar()+
+  facet_wrap(.~time_frame_f+environment)
+
+plot_data3 <- clean_data2 %>% 
+  ggplot(aes(x = homework_hours, y = homework_stress))+
+  geom_jitter()+
+  geom_smooth()+
+  facet_wrap(.~time_frame_f)
+
 ```
+
+```{r}
+plot_data4 <- clean_data2 %>% 
+  ggplot(aes(x = homework_stress))+
+  geom_density()+
+  facet_wrap(.~time_frame_f)
+```
+
 
 ```{r, echo = FALSE}
 plot_data
+plot_data2
+plot_data3
+plot_data4
 ```
 
