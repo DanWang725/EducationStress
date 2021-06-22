@@ -1,8 +1,19 @@
 ---
+title: "Untitled"
+description: |
+  Some of the data correlations that I found
+author:
+  - name: Nora Jones 
+    url: https://example.com/norajones
+    affiliation: Spacely Sprockets
+    affiliation_url: https://example.com/spacelysprokets
+date: "`r Sys.Date()`"
+output: distill::distill_article
+---
+---
 title: "HomeworkStress"
 author: "Daniel Wang"
 date: "17/06/2021"
-output: html_document
 ---
 
 ```{r setup, include=FALSE}
@@ -10,7 +21,6 @@ knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
 library(rvest)
 library(janitor)
-
 ```
 
 
@@ -61,4 +71,5 @@ plot_data2
 plot_data3
 plot_data4
 ```
+
 

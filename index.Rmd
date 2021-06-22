@@ -1,7 +1,7 @@
 ---
-title: "Final Project"
+title: "Effects of Covid-19 on Students"
 description: |
-  Welcome to the website. I hope you enjoy it!
+  Examination on the stress levels experienced by students before and after Covid
 site: distill::distill_website
 ---
 
@@ -17,7 +17,7 @@ library(janitor)
 ```
 
 ```{r get-data}
-clean_data <- read_rds("clean-data.rds") %>% 
+clean_data <- read_csv("clean_data.csv") %>% 
   mutate(time_frame_f = factor(time_frame, c("before", "after"))) %>% 
   mutate(environment = factor(environment, c("Physical","Hybrid","Virtual")))
 ```

@@ -1,5 +1,5 @@
 name: "."
-title: "Final Project"
+title: "Covid-19 Educational Stress"
 description: |
   Final Project
 output_dir: "docs"
@@ -7,6 +7,8 @@ navbar:
   right:
     - text: "Index"
       href: index.html
+    - text: "Stress"
+      href: Stress.html
     - text: "About"
       href: about.html
 output: distill::distill_article
