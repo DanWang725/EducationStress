@@ -66,6 +66,12 @@ plot_data3 <- clean_data2 %>%
   geom_smooth(method = "loess", formula = y ~ x)+
   facet_wrap(.~time_frame_f)
 
+plot_this <- clean_data2 %>% 
+  ggplot(aes(x = classwork_stress, y = homework_stress))+
+  geom_jitter()+
+  facet_wrap(.~time_frame_f)
+
+plot_this
 
 ```
 
@@ -121,7 +127,7 @@ relationship_data$change_hwk_stress %>%
 #   stat_slab()
 
 relationship_data %>%
-  ggplot(aes(x = change_hwk_stress))+
+  ggplot(aes(x = now_homework_stress))+
   geom_histogram()+
   facet_wrap(~gender)
 ```

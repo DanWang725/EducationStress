@@ -39,7 +39,14 @@ after <- raw_data %>%
 
 colnames(before)<-gsub("before_","",colnames(before))
 colnames(after)<-gsub("now_","",colnames(after))
-clean_data <- bind_rows(before,after)
+
+before <- before %>% 
+  mutate(paired = rep(1:n(),each=1))
+
+after <- after %>% 
+  mutate(paired = rep(1:n(),each=1))
+
+clean_data <- bind_rows(list(before,after))
   
 write_csv(clean_data, "clean_data.csv")
 

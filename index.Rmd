@@ -10,6 +10,8 @@ knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
 library(rvest)
 library(janitor)
+library(plotly)
+
 
 # Learn more about creating websites with Distill at:
 # https://rstudio.github.io/distill/website.html
@@ -26,6 +28,24 @@ clean_data <- read_csv("clean_data.csv", col_types = cols(
     time_frame = col_character())) %>% 
   mutate(time_frame_f = factor(time_frame, c("before", "after"))) %>% 
   mutate(environment = factor(environment, c("Physical","Hybrid","Virtual")))
+
+raw_data = read_csv("responses.csv", col_types = cols(
+  Category = col_character(),
+  Country = col_character(),
+  State = col_character(),
+  Age = col_double(),
+  Gender = col_character(),
+  `Before-Environment` = col_character(),
+  `Before-ClassworkStress` = col_double(),
+  `Before-HomeworkStress` = col_double(),
+  `Before-HomeworkHours` = col_double(),
+  `Now-Environment` = col_character(),
+  `Now-ClassworkStress` = col_double(),
+  `Now-HomeworkStress` = col_double(),
+  `Now-HomeworkHours` = col_double(),
+  FamilyRelationships = col_double(),
+  FriendRelationships = col_double())) %>% 
+  clean_names()
 
 time_frames <- c('before' = "Before Covid-19", 'after' = "During Covid-19")
 
@@ -52,5 +72,29 @@ plot_data_clswrk <- clean_data %>%
   labs(title = "Classwork Stress Levels Experienced by Students Before and During Covid-19", subtitle = "There was an uneven increase in classwork stress levels, but stress levels increased as well", x = "Stress Levels", y = "Count", fill = "")
 plot_data_clswrk
 ```
+```{r}
+plot_data_both <- clean_data %>% 
+  ggplot(aes(x = homework_stress, color = gender))+
+  #geom_jitter(width = 1, height = 1, aes(frame = time_frame_f))
+  geom_density(aes(frame = time_frame_f))
+  #geom_line(aes(group = paired, frame = time_frame_f), position=position_jitter(width = 0.05, height = 0.05))
+  
+plot_data_both <- ggplotly()
+plot_data_both
+
+```
+ ```{r}
+# average_data <- raw_data %>% 
+#   mutate(x = factor(row_number())) %>% 
+#   rowwise() %>% 
+#   mutate(mymean = mean(c(before_homework_stress,now_homework_stress) )) %>% 
+#   arrange(mymean) %>% 
+#   ggplot() +
+#   geom_segment( aes(x=x, xend=x, y=before_homework_stress, yend=now_homework_stress), color="grey") +
+#   geom_point( aes(x=x, y=before_homework_stress), color=rgb(0.2,0.7,0.1,0.5), size=3 ) +
+#   geom_point( aes(x=x, y=now_homework_stress), color=rgb(0.7,0.2,0.1,0.5), size=3 ) +
+#   coord_flip()
+# average_data
+ ```
 
 
