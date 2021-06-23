@@ -4,7 +4,7 @@ description: |
   Examination on the stress levels experienced by students before and after Covid
 site: distill::distill_website
 ---
-
+Educational Stress Plots
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
@@ -15,15 +15,34 @@ library(janitor)
 # https://rstudio.github.io/distill/website.html
 
 ```
-
+Different Stresses 
 ```{r get-data}
 clean_data <- read_csv("clean_data.csv") %>% 
   mutate(time_frame_f = factor(time_frame, c("before", "after"))) %>% 
   mutate(environment = factor(environment, c("Physical","Hybrid","Virtual")))
+
+time_frames <- c('before' = "Before Covid-19", 'after' = "During Covid-19")
+
 ```
 
 ```{r handle-data}
+plot_data_hwk <- clean_data %>% 
+  ggplot(aes(x = homework_stress, fill = time_frame))+
+  geom_bar(show.legend = FALSE)+
+  facet_wrap(~time_frame_f, labeller = as_labeller(time_frames))+
+  labs(title = "Homework Stress Levels Experienced by Students Before and During Covid-19", subtitle = "The shape of the distribution stayed relatively the same, while there was a general increase in homework stress", x = "Stress Levels", y = "Count", fill = "")
 
+plot_data_hwk
+```
+
+
+``` {r plot classwork stress}
+plot_data_clswrk <- clean_data %>% 
+  ggplot(aes(x = classwork_stress, fill = time_frame))+
+  geom_bar(show.legend = FALSE)+
+  facet_wrap(~time_frame_f, labeller = as_labeller(time_frames))+
+  labs(title = "Classwork Stress Levels Experienced by Students Before and During Covid-19", subtitle = "There was an uneven increase in classwork stress levels, but stress levels increased as well", x = "Stress Levels", y = "Count", fill = "")
+plot_data_clswrk
 ```
 
 

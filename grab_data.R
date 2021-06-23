@@ -1,6 +1,7 @@
 library(tidyverse)
 library(rvest)
 library(janitor)
+library(ggdist)
 
 raw_data <- read_csv("responses.csv") %>% 
   clean_names()
@@ -23,19 +24,33 @@ col_names <- c("environment","classwork_stress","homework_stress","homework_hour
 #          environment = before_environment) %>% 
 #   mutate(time_frame = "before")
   
+
 before <- raw_data %>% 
-  select(contains("before")) %>% 
-  set_names(col_names) %>% 
+  select(contains("before"), gender) %>% 
+  #rename() %>% 
   mutate(time_frame = "before")
-  
+
+
 after <- raw_data %>% 
-  select(contains("now")) %>% 
-  set_names(col_names) %>% 
+  select(contains("now"), gender) %>% 
+  #set_names(col_names) %>% 
   mutate(time_frame = "after")
 
+
+colnames(before)<-gsub("before_","",colnames(before))
+colnames(after)<-gsub("now_","",colnames(after))
 clean_data <- bind_rows(before,after)
   
-write_rds(clean_data, "clean-data.rds")
+write_csv(clean_data, "clean_data.csv")
+
+
+data_test %>% 
+  ggplot(aes(x = change, y = relationship_type))+
+  stat_halfeye()
+
+data_test %>% 
+  ggplot(aes(x = change_hwk_stress, y = family_relationships))+
+  geom_jitter()
 
 clean_data %>% 
   ggplot(aes(x = stress, color = time_frame))+

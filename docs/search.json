@@ -6,15 +6,15 @@
       "description": "Some additional details about the website",
       "author": [],
       "contents": "\r\n“This is data science”\r\n~preceptor\r\nAbout Me\r\nHi, I’m Daniel Wang. I am currently about to graduate from White Oaks Secondary School, Ontario. I enjoy doing random coding, currently in unity. I also like to go out hiking, and enjoy nature.\r\nAbout The Project\r\nThis project, The Impact of Covid-19 on Various Student’s Educational Stress, examines the stress levels of students before and after Covid-19, categorizing the stress levels from different sources, and how far they were impacted.\r\nGoals\r\nDetermine if there was a change in student’s wellbeings after covid\r\nExamine the extend of an impact Covid had on students\r\nThis depends on if there is a significant correlation established\r\n\r\nKane’s Free High School Data Science Bootcamp\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-06-22T13:14:03-04:00"
+      "last_modified": "2021-06-23T14:18:16-04:00"
     },
     {
       "path": "index.html",
       "title": "Effects of Covid-19 on Students",
       "description": "Examination on the stress levels experienced by students before and after Covid\n",
       "author": [],
-      "contents": "\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-06-22T13:14:07-04:00"
+      "contents": "\r\nEducational Stress Plots\r\nDifferent Stresses\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-06-23T14:18:20-04:00"
     },
     {
       "path": "stress.html",
@@ -27,8 +27,22 @@
         }
       ],
       "date": "`r Sys.Date()`",
-      "contents": "\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-06-22T13:14:12-04:00"
+      "contents": "\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n.\r\n-3 -2 -1  0  1  2  3  4  5 \r\n 4  2  2 12 24 22  4  6  4 \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-06-23T14:18:28-04:00"
+    },
+    {
+      "path": "table.html",
+      "title": "Tables",
+      "description": "A new article created using the Distill format.\n",
+      "author": [
+        {
+          "name": "Nora Jones",
+          "url": "https://example.com/norajones"
+        }
+      ],
+      "date": "`r Sys.Date()`",
+      "contents": "\r\nDistill is a publication format for scientific and technical writing, native to the web.\r\nLearn more about using Distill for R Markdown at https://rstudio.github.io/distill.\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-06-23T14:18:29-04:00"
     }
   ],
   "collections": []
