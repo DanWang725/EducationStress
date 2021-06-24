@@ -4,11 +4,9 @@ description: |
   Final Project
 output_dir: "docs"
 navbar:
-  right:
+  left:
     - text: "Analysis"
       href: index.html
-    - text: "Stress"
-      href: Stress.html
     - text: "Source"
       href: table.html
     - text: "About"

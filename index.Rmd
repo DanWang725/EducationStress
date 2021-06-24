@@ -65,6 +65,8 @@ facet_txt <- c('before' = "Before Covid-19",
                'NA' = "Prefer Not To Say")
 
 ```
+Students were asked to rate their stress level on a scale of 0 to 6, with 0 being perfectly calm, no worries, and 6 being
+
 ## Graph 1
 ```{r handle-data}
 plot_data_stress <- clean_data_expnd %>% 
@@ -72,7 +74,7 @@ plot_data_stress <- clean_data_expnd %>%
   geom_bar(show.legend = FALSE)+
   facet_wrap(~time_frame_f+stress_type, labeller = as_labeller(facet_txt), shrink = FALSE)+
   theme_bw()+
-  labs(title = "Stress Levels Experienced by Students Before and During Covid-19", x = "Stress Levels", y = "Count", fill = "")
+  labs(title = "Stress Levels Experienced by Students Before and During Covid-19", x = "Stress Levels (0-6)", y = "Count", fill = "")
 
 plot_data_stress
 ```
@@ -130,7 +132,7 @@ plot_grid(title, plot_physical, plot_hybrid, plot_virtual,
           rel_heights=c(0.5, 1.3, 1.3, 1.3))
 ```
 
-Despite fewer data points for the hybrid and physical spaces, there are a few differences between them. Students in physical learning environments had the highest average stress level with class work.
+Compared to the first graph, the environment with the highest amount of people in it has similar distributions. Despite fewer data points for the hybrid and physical spaces, there are a few differences between them. Students in physical learning environments had the highest average stress level with class work. Students in virtual learning spaces experienced less stress when compared to the homework stress.
 
 ## Graph 3
 
@@ -139,11 +141,12 @@ plot_gender <- clean_data_expnd %>%
   filter(time_frame == "after") %>% 
   ggplot(aes(x = stress))+
   geom_bar()+
+  theme_bw()+
   facet_wrap(~stress_type+gender, ncol = 4, labeller = as_labeller(facet_txt))+
   labs(title = "Stress Experienced by Different Genders", x = "Stress Levels", y = "Count")
 plot_gender
 ```
-
+There was a difference between the distribution of stress levels, Females experienced on average a lower stress around classwork compared to males. Males experienced higher stress levels compared to females
 
 ```{r}
 
