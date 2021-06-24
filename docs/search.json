@@ -6,15 +6,15 @@
       "description": "About the creator and purpose",
       "author": [],
       "contents": "\r\n“This is data science”\r\n~preceptor\r\nAbout Me\r\nHi, I’m Daniel Wang. I am currently about to graduate from White Oaks Secondary School, Ontario. I enjoy doing random coding, currently in unity. I also like to go out hiking, and enjoy nature.\r\nAbout The Project\r\nThis project, The Impact of Covid-19 on Various Student’s Educational Stress, examines the stress levels of students before and after Covid-19, categorizing the stress levels from different sources, and how far they were impacted.\r\nGoals\r\nDetermine if there was a change in student’s wellbeings after covid\r\nExamine the extend of an impact Covid had on students\r\nThis depends on if there is a significant correlation established\r\n\r\nKane’s Free High School Data Science Bootcamp\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-06-24T16:20:51-04:00"
+      "last_modified": "2021-06-24T17:01:25-04:00"
     },
     {
       "path": "index.html",
       "title": "Effects of Covid-19 on Students",
       "description": "Examination on the stress levels experienced by students before and after Covid-19\n",
       "author": [],
-      "contents": "\r\n\r\n\r\n\r\nGraph 1\r\n\r\n\r\n\r\nThere was a general increase in stress levels for students during Covid-19. Prior to the lockdown, the average stress rating was located in the lower half of the distribution. The change resulted in a distribution that was skewed towards the higher levels. The homework stress had a higher average compared to the classwork stress both before and during Covid-19.\r\nThis graph splits the responses up by the respondent’s current learning environment to show if different environments experienced stress differently\r\nGraph 2\r\nThis graph splits the responses up by the respondent’s current learning environment to show if different environments experienced stress differently\r\n\r\n\r\n\r\nDespite fewer data points\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-06-24T16:20:58-04:00"
+      "contents": "\r\n\r\n\r\n\r\nGraph 1\r\n\r\n\r\n\r\nThere was a general increase in stress levels for students during Covid-19. Prior to the lockdown, the average stress rating was located in the lower half of the distribution. The change resulted in a distribution that was skewed towards the higher levels. The homework stress had a higher average compared to the classwork stress both before and during Covid-19.\r\nThis graph splits the responses up by the respondent’s current learning environment to show if different environments experienced stress differently\r\nGraph 2\r\nThis graph splits the responses up by the respondent’s current learning environment to show if different environments experienced stress differently\r\n\r\n\r\n\r\nDespite fewer data points for the hybrid and physical spaces, there are a few differences between them. Students in physical learning environments had the highest average stress level with class work.\r\nGraph 3\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-06-24T17:01:33-04:00"
     },
     {
       "path": "stress.html",
@@ -28,7 +28,7 @@
       ],
       "date": "`r Sys.Date()`",
       "contents": "\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n.\r\n-3 -2 -1  0  1  2  3  4  5 \r\n 4  2  2 12 24 22  4  6  4 \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-06-24T16:21:08-04:00"
+      "last_modified": "2021-06-24T17:01:42-04:00"
     },
     {
       "path": "table.html",
@@ -42,7 +42,7 @@
       ],
       "date": "`r Sys.Date()`",
       "contents": "\r\nDataset: [COVID-19’s Impact on Educational Stress]https://www.kaggle.com/bsoyka3/educational-stress-due-to-the-coronavirus-pandemic\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-06-24T16:21:09-04:00"
+      "last_modified": "2021-06-24T17:01:43-04:00"
     }
   ],
   "collections": []
