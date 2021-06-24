@@ -9,7 +9,7 @@ navbar:
       href: index.html
     - text: "Stress"
       href: Stress.html
-    - text: "Tables"
+    - text: "Source"
       href: table.html
     - text: "About"
       href: about.html

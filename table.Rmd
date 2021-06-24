@@ -1,23 +1,17 @@
 ---
-title: "Tables"
+title: "Data Source"
 description: |
-  A new article created using the Distill format.
+  stuff
 author:
-  - name: Nora Jones 
-    url: https://example.com/norajones
-    affiliation: Spacely Sprockets
-    affiliation_url: https://example.com/spacelysprokets
+  - name: Daniel Wang
 date: "`r Sys.Date()`"
 output: distill::distill_article
 ---
 
+Dataset: [COVID-19's Impact on Educational Stress]<https://www.kaggle.com/bsoyka3/educational-stress-due-to-the-coronavirus-pandemic>
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
-
-Distill is a publication format for scientific and technical writing, native to the web. 
-
-Learn more about using Distill for R Markdown at <https://rstudio.github.io/distill>.
 
 
 
