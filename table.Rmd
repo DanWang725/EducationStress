@@ -1,7 +1,7 @@
 ---
 title: "Data Source"
 description: |
-  stuff
+  This is where my datasource came from
 author:
   - name: Daniel Wang
 date: "`r Sys.Date()`"
@@ -9,6 +9,7 @@ output: distill::distill_article
 ---
 
 Dataset: [COVID-19's Impact on Educational Stress](https://www.kaggle.com/bsoyka3/educational-stress-due-to-the-coronavirus-pandemic)
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```

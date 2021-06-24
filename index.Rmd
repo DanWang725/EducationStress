@@ -146,7 +146,7 @@ plot_gender <- clean_data_expnd %>%
   labs(title = "Stress Experienced by Different Genders", x = "Stress Levels", y = "Count")
 plot_gender
 ```
-There was a difference between the distribution of stress levels, Females experienced on average a lower stress around classwork compared to males. Males experienced higher stress levels compared to females
+This graph represents the stress levels experienced by each gender, split between classwork and homework stresses. Males have a higher average stress level in both categories compared to females, although the students who prefer not to specify have the highest average. The largest difference between genders is in the classwork stress. The highest concentration for females is among the lower ranges for stress, while males have it as the highest value. Within the homework stress the concentration for females follows the same general shape, albeit at a wider distribution.
 
 ```{r}
 
