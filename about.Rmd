@@ -1,17 +1,17 @@
 ---
-title: "About this project"
+title: "Daniel Wang"
 description: |
-  About the creator and purpose
+  About me and my project
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 "This is data science"  
-~preceptor
+~Preceptor
 
 ## About Me
-Hi, I'm **Daniel Wang**. I am currently about to graduate from White Oaks Secondary School, Ontario. I enjoy doing random coding, currently in unity. I also like to go out hiking, and enjoy nature.
+Hi, I'm **Daniel Wang**. I am a graduate from White Oaks Secondary School, Ontario, and an upcoming student at University of Guelph. I enjoy doing random coding, currently in unity. I also like to go out hiking and enjoy nature.
 
 ## About The Project
 This project, *The Impact of Covid-19 on Various Student's Educational Stress*, examines the stress levels of students before and after Covid-19, categorizing the stress levels from different sources, and how far they were impacted.

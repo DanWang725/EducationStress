@@ -10,9 +10,33 @@ output: distill::distill_article
 
 Dataset: [COVID-19's Impact on Educational Stress](https://www.kaggle.com/bsoyka3/educational-stress-due-to-the-coronavirus-pandemic)
 
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+library(knitr)
+library(tidyverse)
+library(rmarkdown)
+library(gt)
+
 ```
+
+```{r}
+data_table <- read_csv("clean_data.csv", col_types = cols(
+  environment = col_character(),
+  classwork_stress = col_double(),
+  homework_stress = col_double(),
+  homework_hours = col_double(),
+  gender = col_character(),
+  time_frame = col_character()))
+```
+
+```{r}
+gt(data_table, rownames_to_stub = TRUE) %>% 
+  tab_header(title = md("**Wrangled Data**")) %>% 
+  tab_source_note("Source: Kaggle") %>% 
+  tab_spanner(label = "Variable Group 1", columns = c(environment, gender, time_frame, classwork_stress, homework_stress))
+```
+
 
 
 

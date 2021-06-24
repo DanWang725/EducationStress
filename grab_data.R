@@ -40,29 +40,24 @@ after <- raw_data %>%
 colnames(before)<-gsub("before_","",colnames(before))
 colnames(after)<-gsub("now_","",colnames(after))
 
-before <- before %>% 
-  mutate(paired = rep(1:n(),each=1))
-
-after <- after %>% 
-  mutate(paired = rep(1:n(),each=1))
 
 clean_data <- bind_rows(list(before,after))
   
 write_csv(clean_data, "clean_data.csv")
 
 
-data_test %>% 
-  ggplot(aes(x = change, y = relationship_type))+
-  stat_halfeye()
-
-data_test %>% 
-  ggplot(aes(x = change_hwk_stress, y = family_relationships))+
-  geom_jitter()
-
-clean_data %>% 
-  ggplot(aes(x = stress, color = time_frame))+
-  geom_bar()+
-  facet_wrap(~time_frame)
-  mutate(`Time-Frame` = if_else(`Time-Frame` == "Before-Environment", "Before_Covid", "After-Covid"))
+# data_test %>% 
+#   ggplot(aes(x = change, y = relationship_type))+
+#   stat_halfeye()
+# 
+# data_test %>% 
+#   ggplot(aes(x = change_hwk_stress, y = family_relationships))+
+#   geom_jitter()
+# 
+# clean_data %>% 
+#   ggplot(aes(x = stress, color = time_frame))+
+#   geom_bar()+
+#   facet_wrap(~time_frame)
+#   mutate(`Time-Frame` = if_else(`Time-Frame` == "Before-Environment", "Before_Covid", "After-Covid"))
 
   
