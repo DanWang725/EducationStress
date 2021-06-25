@@ -1,7 +1,7 @@
 ---
 title: "Data Source"
 description: |
-  This is where my datasource came from
+  This is where my datasource came from.
 author:
   - name: Daniel Wang
 date: "`r Sys.Date()`"
